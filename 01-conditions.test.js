@@ -11,14 +11,22 @@ describe("estPositif", () => {
     expect(estPositif(-3)).toBe(false)
   })
   it("retourne true pour zéro", () => {
-    expect(estPositif(0)).toBe(true)
+    expect(estPositif(0)).toBe(false)
   })
 })
 
 // Même pattern qu'estPositif — écris les 3 tests toi-même.
 // Cas à couvrir : un nombre pair, un nombre impair, zéro.
 describe("estPair", () => {
-  // à compléter
+  it("retourne true pour un nombre pair", () => {
+    expect(estPair(4)).toBe(true)
+  })
+  it("retourne false pour un nombre impaire", () => {
+    expect(estPair(9)).toBe(false)
+  })
+  it("retourne true pour zero", () => {
+    expect(estPair(0)).toBe(true)
+  })
 })
 
 // Nouveau pattern : deux paramètres, cas d'égalité.
@@ -38,11 +46,34 @@ describe("max", () => {
 // Même pattern que max — écris les tests pour chaque mention.
 // Cas à couvrir : une note dans chaque tranche, et la valeur frontière 16.
 describe("mention", () => {
-  // à compléter
+  it("retourne insuffisant pour n < 10", () => {
+    expect(mention(8)).toBe("insuffisant")
+  })
+  it("retourne passable pour n >= 10 && n <= 12", () => {
+    expect(mention(11)).toBe("passable")
+  })
+  it("retourne assez bien pour n >= 12 && n <= 14", () => {
+    expect(mention(13)).toBe("assez bien")
+  })
+  it("retourne bien pour n >= 14 && n <= 16", () => {
+    expect(mention(15)).toBe("bien")
+  })
+  it("retourne tres bien pour n > 16", () => {
+    expect(mention(18)).toBe("tres bien")
+  })
+  
 })
 
 // [FACULTATIF] Même pattern — à toi.
 // Cas à couvrir : multiple de 3, multiple de 5, multiple des deux, autre.
 describe("fizzbuzz", () => {
-  // à compléter
+  it("retourne fizzbuzz pour n % 3 === 0 && n % 5 === 0", () => {
+    expect(fizzbuzz(15)).toBe("FizzBuzz")
+  })
+  it("retourne fizz pour n % 3 === 0", () => {
+    expect(fizzbuzz(3)).toBe("Fizz")
+  })
+  it("retourne buzz pour n % 5 === 0", () => {
+    expect(fizzbuzz(5)).toBe("Buzz")
+  })
 })
