@@ -163,5 +163,13 @@ export const estDivisibleParTous = (n, diviseurs) => {
  * @example fibonacci(1) → [0]
  */
 export const fibonacci = (n) => {
-  // à compléter
+  const resultat = []
+  for (let i = 0; i < n; i++) {
+    if (i < 2) {
+      resultat[i] = i
+    } else {
+      resultat[i] = resultat[i - 1] + resultat[i - 2]
+    }
+  }
+  return resultat
 }
